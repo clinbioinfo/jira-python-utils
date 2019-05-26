@@ -4,7 +4,7 @@ import click
 
 from jira import JIRA
 
-url = 'https://jira.ad.personalgenome.com'
+url = 'https://localhost'
 
 DEFAULT_CREDENTIAL_FILE = os.environ['HOME'] + '/.jira/credentials.txt'
 
