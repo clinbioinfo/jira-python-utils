@@ -4,7 +4,7 @@ import click
 
 from jira import JIRA
 
-DEFAULT_URL_FILE = os.file.dirname(__file__) + '/conf/jira_rest_url.txt'
+DEFAULT_URL_FILE = os.path.dirname(__file__) + '/conf/jira_rest_url.txt'
 
 DEFAULT_CREDENTIAL_FILE = os.environ['HOME'] + '/.jira/credentials.txt'
 
