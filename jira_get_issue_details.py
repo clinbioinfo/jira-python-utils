@@ -4,7 +4,7 @@ import click
 
 from jira import JIRA
 
-url = 'https://localhost'
+DEFAULT_URL_FILE = os.path.dirname(__file__) + '/conf/jira_rest_url.txt'
 
 DEFAULT_CREDENTIAL_FILE = os.environ['HOME'] + '/.jira/credentials.txt'
 
@@ -15,6 +15,15 @@ DEFAULT_CREDENTIAL_FILE = os.environ['HOME'] + '/.jira/credentials.txt'
 def main(credential_file, issue):
     """ISSUE : string - the JIRA issue identifier e.g.: RA-478
     """
+
+    rest_url_file = DEFAULT_URL_FILE
+    if not os.path.exists(rest_url_file):
+        print("JIRA REST URL file '{}' does not exist".format(rest_url_file))
+        sys.exit(1)
+    else:
+        with open(rest_url_file, 'r') as f:
+            url = f.readline()
+            print("read the REST URL from file '{}'".format(rest_url_file))
 
     if credential_file is None:
         credential_file = DEFAULT_CREDENTIAL_FILE
