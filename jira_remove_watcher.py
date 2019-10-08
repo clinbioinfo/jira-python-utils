@@ -49,5 +49,6 @@ def main(credential_file, issue):
     else:
         print("Could not instantiate JIRA for url '{}'".format(url))
 
+
 if __name__ == '__main__':
     main()
