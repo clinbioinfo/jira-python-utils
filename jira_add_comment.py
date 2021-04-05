@@ -31,7 +31,7 @@ def main(credential_file, comment, comment_file, issue):
         print("--comment and --comment_file were not specified")
         sys.exit(1)
 
-    if comment is '':
+    if comment == '':
         print("You must provide some test for the comment")
         sys.exit(1)
 
